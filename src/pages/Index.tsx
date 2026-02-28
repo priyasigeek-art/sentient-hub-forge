@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
-import { supabase } from "@/integrations/supabase/client";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
@@ -98,17 +96,8 @@ const FAQS = [
 ];
 
 const Index = () => {
-  const navigate = useNavigate();
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [billingCycle, setBillingCycle] = useState<"monthly" | "yearly">("monthly");
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) {
-        navigate("/dashboard");
-      }
-    });
-  }, [navigate]);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -133,7 +122,7 @@ const Index = () => {
             <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors hidden md:block">
               Admin
             </Link>
-            <Link to="/">
+            <Link to="/login">
               <Button size="sm" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-5">
                 Login
               </Button>
@@ -157,7 +146,7 @@ const Index = () => {
           Work with an AI builder that understands your ideas, writes clean code, and turns them into real products in minutes — from quick prototypes to full-stack apps.
         </p>
         <div className="mt-8 flex items-center justify-center gap-4">
-          <Link to="/">
+          <Link to="/login">
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-12 text-base">
               Get Started
             </Button>
