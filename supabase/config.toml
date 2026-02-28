@@ -1,0 +1,4 @@
+project_id = "ipmwcahiybckklbbqddl"
+
+[functions.ai-proxy]
+verify_jwt = false
