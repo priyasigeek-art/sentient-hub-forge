@@ -1,45 +1,35 @@
-import { Key, Shield, Activity, Users } from "lucide-react";
+import { Users, Globe, Cpu, TrendingUp } from "lucide-react";
 
 const stats = [
-  { label: "API Keys Configured", value: "4", icon: Key, color: "text-primary" },
-  { label: "Active Services", value: "0", icon: Activity, color: "text-success" },
-  { label: "Security Status", value: "Secure", icon: Shield, color: "text-success" },
-  { label: "Admin Users", value: "1", icon: Users, color: "text-warning" },
+  { label: "Total Users", value: "1,248", change: "+12%", icon: Users },
+  { label: "Websites Built", value: "3,567", change: "+8%", icon: Globe },
+  { label: "AI Generations", value: "24.5K", change: "+23%", icon: Cpu },
+  { label: "Revenue", value: "$12,400", change: "+15%", icon: TrendingUp },
 ];
 
 const DashboardHome = () => {
   return (
     <div className="animate-fade-in">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold font-display text-foreground">Dashboard</h1>
-        <p className="mt-2 text-muted-foreground">
-          Welcome to your AI Admin Dashboard
+        <h1 className="text-2xl font-bold font-display text-foreground">Dashboard</h1>
+        <p className="text-sm text-muted-foreground mt-1">
+          Overview of your WebAI platform
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stats.map((stat) => (
-          <div key={stat.label} className="glass-card rounded-xl p-5 animate-slide-in">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm text-muted-foreground">{stat.label}</p>
-                <p className="text-2xl font-bold font-display text-foreground mt-1">
-                  {stat.value}
-                </p>
+          <div key={stat.label} className="glass-card rounded-xl p-5">
+            <div className="flex items-start justify-between mb-4">
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                <stat.icon className="h-5 w-5 text-primary" />
               </div>
-              <stat.icon className={`h-10 w-10 ${stat.color} opacity-80`} />
+              <span className="text-xs font-semibold text-green-400">{stat.change}</span>
             </div>
+            <p className="text-2xl font-bold font-display text-foreground">{stat.value}</p>
+            <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
           </div>
         ))}
-      </div>
-
-      <div className="mt-8 glass-card rounded-xl p-6">
-        <h2 className="text-lg font-semibold font-display text-foreground mb-4">
-          Quick Actions
-        </h2>
-        <p className="text-muted-foreground">
-          Navigate to <span className="text-primary font-medium">General Settings</span> to configure your AI provider API keys.
-        </p>
       </div>
     </div>
   );
