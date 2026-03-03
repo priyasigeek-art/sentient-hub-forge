@@ -15,6 +15,7 @@ import UsersPage from "./pages/UsersPage";
 import WebsiteBuilderPage from "./pages/WebsiteBuilderPage";
 import NotificationsPage from "./pages/NotificationsPage";
 import ApiKeysPage from "./pages/ApiKeysPage";
+import SocialMediaPage from "./pages/SocialMediaPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import NotFound from "./pages/NotFound";
 
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="image-generator" element={<ImageGeneratorPage />} />
             <Route path="users" element={<UsersPage />} />
             <Route path="website-builder" element={<WebsiteBuilderPage />} />
+            <Route path="social-media" element={<SocialMediaPage />} />
             <Route path="notifications" element={<NotificationsPage />} />
             <Route path="api-keys" element={<ApiKeysPage />} />
           </Route>
