@@ -2,3 +2,9 @@ project_id = "ipmwcahiybckklbbqddl"
 
 [functions.ai-proxy]
 verify_jwt = false
+
+[functions.ai-content]
+verify_jwt = false
+
+[functions.ai-image]
+verify_jwt = false
