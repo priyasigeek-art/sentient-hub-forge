@@ -9,6 +9,8 @@ import DashboardLayout from "./pages/DashboardLayout";
 import DashboardHome from "./pages/DashboardHome";
 import GeneralSettings from "./pages/GeneralSettings";
 import AIEnginesPage from "./pages/AIEnginesPage";
+import ContentCreatorPage from "./pages/ContentCreatorPage";
+import ImageGeneratorPage from "./pages/ImageGeneratorPage";
 import UsersPage from "./pages/UsersPage";
 import WebsiteBuilderPage from "./pages/WebsiteBuilderPage";
 import NotificationsPage from "./pages/NotificationsPage";
@@ -38,6 +40,8 @@ const App = () => (
             <Route index element={<DashboardHome />} />
             <Route path="settings" element={<GeneralSettings />} />
             <Route path="ai-engines" element={<AIEnginesPage />} />
+            <Route path="content-creator" element={<ContentCreatorPage />} />
+            <Route path="image-generator" element={<ImageGeneratorPage />} />
             <Route path="users" element={<UsersPage />} />
             <Route path="website-builder" element={<WebsiteBuilderPage />} />
             <Route path="notifications" element={<NotificationsPage />} />
